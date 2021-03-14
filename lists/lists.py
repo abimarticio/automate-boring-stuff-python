@@ -96,3 +96,48 @@ b = 'BBB'
 a, b = b, a
 print(a)
 print()
+
+# methods are functions that are 'called on' values
+# index() list method returns the index of an item in the list
+# append() list method adds a value to the end of the list
+# insert() list method adds a value anywhere inside a list
+# remove() list method removes an item, specified by the value, from a list
+# sort() list method sort the items in a list
+# revese=True keyword argument can sort in reverse order
+# sorting happens in "ASCII-betical" order. To sort normally, pass key=str.lower
+# these list methods operate on the list "in place", rather than returning a new list value
+
+# index method
+spam = ['hello', 'hi', 'howdy', 'heyas', 'hi']
+print(spam.index('hello')) # 0
+print(spam.index('hi')) # 1
+
+# append method
+spam.append('moose')
+print(spam)
+
+# insert method
+# insert(index, value)
+spam.insert(1, 'chicken')
+print(spam)
+
+# remove method
+spam.remove('hi')
+print(spam)
+
+del spam[1]
+print(spam)
+
+# sort method
+spam = [10, 3, 1, 2, -3]
+spam.sort()
+print(spam)
+spam.sort(reverse=True)
+print(spam)
+
+spam = ['a', 'z', 'A', 'Z']
+spam.sort()
+print(spam)
+spam.sort(key=str.lower)
+print(spam)
+print()
