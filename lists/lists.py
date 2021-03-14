@@ -56,3 +56,43 @@ print(text)
 
 print('howdy' in ['hello', 'hi', 'howdy'])
 print('howdy' not in ['hello', 'hi', 'howdy'])
+print()
+
+# for loops
+# range() function returns a list like value, which can be passed to the list() function if you need an actual list value
+# variables can swap values using multiple assignment
+for i in range(4):
+    print(i)
+
+print(range(4))
+
+for i in [0, 1, 2, 3]:
+    print(i)
+
+print(list(range(4)))
+print(list(range(0, 100, 2)))
+
+supplies = ['pens', 'pencils', 'stapler']
+for i in range(len(supplies)):
+    print(supplies[i], i)
+
+# multiple assignment
+cat = ['fat', 'orange', 'loud']
+size = cat[0]
+color = cat[1]
+disposition = cat[2]
+print(size)
+print(color)
+print(disposition)
+
+size, color, disposition = cat
+print(size)
+print(color)
+print(disposition)
+
+# swapping variables
+a = 'AAA'
+b = 'BBB'
+a, b = b, a
+print(a)
+print()
