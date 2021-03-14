@@ -141,3 +141,62 @@ print(spam)
 spam.sort(key=str.lower)
 print(spam)
 print()
+
+# similarities in list and strings
+# strings can do a lot of the same things lists can do, but strings are immutable
+# immutable values like strings and tuples cannot be modifies "in place"
+# mutable values like lists can be modified in place
+# the difference between immutable and mutable comes up with "references"
+# variable don't contain lists, they contain references to lists
+# when passing a list argument to a function, you are actually passing a list reference
+# changes to a list in a function will affect the list outside the function
+# deepcopy() function makes a total copy of the list so it doesn't copy the reference to the list
+
+name = 'Zophie'
+print(name[0])
+
+for letter in name:
+    print(letter)
+
+# creating new string using slice
+name = 'Zophie a cat'
+new_name = name[:7] + 'the' + name[8:]
+print(new_name)
+print()
+
+# References
+spam = 42
+cheese = spam
+spam = 100
+print(spam)
+print(cheese)
+
+spam = [0, 1, 2, 3, 4]
+cheese = spam
+cheese[1] = 'hello'
+print(cheese) # [0, 'hello', 2, 3, 4]
+print(spam) # [0, 'hello', 2, 3, 4]
+
+def eggs(someParameter):
+    someParameter.append('hello')
+
+spam = [1, 2, 3]
+eggs(spam)
+print(spam)
+
+# the copy deepcopy() function
+import copy
+spam = ['A', 'B', 'C']
+cheese = copy.deepcopy(spam)
+cheese[1] = 42
+print(cheese)
+print(spam)
+
+# line continuation \
+spam = ['apples',
+        'oranges',
+        'cats']
+print(spam)
+
+print('four score and seven ' + \
+    'years ago')
