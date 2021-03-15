@@ -29,7 +29,7 @@ print(match_object) # [('02-8123-4567', '02', '8123-4567'), ('02-1234-5678', '02
 
 lyrics = '''12 drummers drumming, 11 pipers piping, 10 lords a leaping, 9 ladieas dancing. 
             8 maids a milking, 7 swans a swimming, 6 geese a laying, 5 golden rings, 
-            4 calling birds, 3 french hens, 2 turtle doves and 1 partridgein a pear tree'''
+            4 calling birds, 3 french hens, 2 turtle doves and 1 partridge in a pear tree'''
 xmas_regex = re.compile(r'\d+\s\w+')
 match_object = xmas_regex.findall(lyrics)
 print(match_object)
@@ -42,11 +42,11 @@ match_object = vowel_regex.findall(message)
 print(match_object) # ['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o']
 
 
-vowel_regex = re.compile(r'[aeiouAEIOU]{2}') # r'(a|e|i|o|u|A|E|I|O|U)'
+vowel_regex = re.compile(r'[aeiouAEIOU]{2}') 
 match_object = vowel_regex.findall(message)
 print(match_object) # ['ea', 'oo']
 
 
-vowel_regex = re.compile(r'[^aeiouAEIOU]') # r'(a|e|i|o|u|A|E|I|O|U)'
+vowel_regex = re.compile(r'[^aeiouAEIOU]') 
 match_object = vowel_regex.findall(message)
 print(match_object) # ['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.']
