@@ -25,3 +25,15 @@ ends_with_world_Regex = re.compile(r'world!$')
 match_object = ends_with_world_Regex.search(message)
 print(match_object) 
 # None
+
+message = '123456789'
+all_digits_Regex = re.compile(r'^\d+$')
+match_object = all_digits_Regex.search(message)
+print(match_object) 
+# <re.Match object; span=(0, 9), match='123456789'>
+
+message = '1234x56789'
+all_digits_Regex = re.compile(r'^\d+$')
+match_object = all_digits_Regex.search(message)
+print(match_object) 
+# None
