@@ -37,3 +37,15 @@ all_digits_Regex = re.compile(r'^\d+$')
 match_object = all_digits_Regex.search(message)
 print(match_object) 
 # None
+
+message = 'The cat in the hat sat on the flat mat.'
+at_regex = re.compile(r'.at')
+match_object = at_regex.findall(message)
+print(match_object)
+# ['cat', 'hat', 'sat', 'lat', 'mat']
+
+message = 'The cat in the hat sat on the flat mat.'
+at_regex = re.compile(r'.{1,2}at')
+match_object = at_regex.findall(message)
+print(match_object)
+# [' cat', ' hat', ' sat', 'flat', ' mat']
