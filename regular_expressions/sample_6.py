@@ -17,3 +17,15 @@ match_object = names_regex.findall(message)
 print(match_object) # ['A', 'B']
 print(names_regex.sub('Agent \1*****', message))
 # Agent A***** gave the secret documents to Agent B*****.
+
+
+# Passing re.VERBOSE lets you add whitespace and comments to the regex string passed to re.compile().
+# If you want to pass multiple arguments (re.DOTALL , re.IGNORECASE, re.VERBOSE), combine them with the | bitwise operator.
+re.compile(r'''
+(\d\d-)|    #area code (without parens, with dash)
+(\(\d\d\d\)) # -or- area code with parens and dash
+\d\d\d\d     # first 4 digits
+-            # first dash
+\d\d\d\d     # last four digits
+\sx\d{2,4}   # extension, like x1234
+''', re.IGNORECASE | re.DOTALL | re.VERBOSE)
