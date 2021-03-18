@@ -1,4 +1,10 @@
 # Regex Dot-Star and the Caret/Dollar Characters
+# ^ means the string must start with pattern.
+# $ means the string must end with the pattern. 
+# Both ^ and $ means the entire string must match the entire pattern.
+# The . dot is a wildcard; it matches any character except newlines.
+# Pass re.DOTALL as the second argument to re.compile() to make the . dot match newlines as well.
+# Pass re.I or re.IGNORECASE as the second argument to re.compile() to make the matching case-insensitive.
 import re
 
 
@@ -49,3 +55,44 @@ at_regex = re.compile(r'.{1,2}at')
 match_object = at_regex.findall(message)
 print(match_object)
 # [' cat', ' hat', ' sat', 'flat', ' mat']
+
+message = 'First Name: Al Last Name: Sweigart'
+name_Regex = re.compile(r'First Name: (.*) Last Name: (.*)')
+match_object = name_Regex.findall(message)
+print(match_object)
+# [('Al', 'Sweigart')]
+
+serve = '<To serve humans> for dinner.>'
+non_greedy = re.compile(r'<(.*?)>')
+match_object = non_greedy.findall(serve)
+print(match_object)
+# ['To serve humans']
+
+greedy = re.compile(r'<(.*)>')
+match_object = greedy.findall(serve)
+print(match_object)
+# ['To serve humans> for dinner.']
+
+prime = 'Serve the public trust.\nProtect the innocent.\nUpload the law.'
+print(prime)
+dot_star = re.compile(r'.*')
+match_object = dot_star.search(prime)
+print(match_object)
+# <re.Match object; span=(0, 23), match='Serve the public trust.'>
+
+dot_star = re.compile(r'.*', re.DOTALL)
+match_object = dot_star.search(prime)
+print(match_object)
+# <re.Match object; span=(0, 61), match='Serve the public trust.\nProtect the innocent.\nU>
+
+message = 'Al, why does your programming book talk about RobCop so much?'
+vowel_Regex = re.compile(r'[aeiou]')
+match_object = vowel_Regex.findall(message)
+print(match_object)
+# ['o', 'e', 'o', 'u', 'o', 'a', 'i', 'o', 'o', 'a', 'a', 'o', 'u', 'o', 'o', 'o', 'u']
+
+message = 'Al, why does your programming book talk about RobCop so much?'
+vowel_Regex = re.compile(r'[aeiou]', re.IGNORECASE)
+match_object = vowel_Regex.findall(message)
+print(match_object)
+# ['A', 'o', 'e', 'o', 'u', 'o', 'a', 'i', 'o', 'o', 'a', 'a', 'o', 'u', 'o', 'o', 'o', 'u']
