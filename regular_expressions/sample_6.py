@@ -1,4 +1,4 @@
-# Regex sub() and Vebrose Mode
+# Regex sub() and Verbose Mode
 import re
 
 
